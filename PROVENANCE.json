@@ -1,6 +1,6 @@
 {
   "title": "Import Lens \u2014 Calibration Comparison",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "engine": "Godot 4.5.1.stable.official.f62fdbde1",
   "scope": "One original included antenna; two actual animation imports and CPU mesh differences. No arbitrary user-file intake or general validity verdict.",
   "calibration_glb_sha256": "c14e704d5e115d595ca093c0e3da313cf308cf89e0cd15a78d1a5c2faf604f8c",
@@ -27,7 +27,7 @@
   "license": "Original calibration and wrapper use their separate MIT notices; Godot uses its own notices.",
   "hosted_web_version": "0.2",
   "source_only_update": true,
-  "source_privacy_cleanup": {
+  "previous_source_privacy_cleanup": {
     "blend_sha256": "db2a1fd48e7d0432f7addffafd5231e7336d1855e1621a508154523b10f1558a",
     "blend_bytes": 739414,
     "changes": [
@@ -41,6 +41,35 @@
     "fresh_blender_reopen": "4.5.13 LTS",
     "geometry_rig_actions_timeline_unchanged": true,
     "glb_and_runtime_unchanged": true,
-    "private_path_categories_remaining_in_review": []
-  }
+    "private_path_categories_remaining_in_review": [],
+    "scope_correction": "Version0.2.1 cleared visible paths but left truncated path fragments after NUL in fixed buffers; this historical scope was superseded by0.2.2."
+  },
+  "source_privacy_cleanup": {
+    "blend_sha256": "bd8957d3a437a4f350a138e7f2ab862c031fa4a26d3cfdf6f4dc91ae2a1618f8",
+    "blend_bytes": 739414,
+    "source_metadata_only": true,
+    "method": "Overwrite each declared RNA filesystem string span with harmless ASCII before restoring the existing relative value; no binary patch.",
+    "fields": [
+      {
+        "type": "FileSelectParams",
+        "property": "directory",
+        "capacity": 1090
+      },
+      {
+        "type": "RenderSettings",
+        "property": "filepath",
+        "capacity": 1024
+      }
+    ],
+    "visible_paths_unchanged_from_v0_2_1": true,
+    "model_material_rig_actions_unchanged": true,
+    "both_actions_independently_sampled": true,
+    "evaluated_pose_count": 6,
+    "source_vertices_per_pose": 358,
+    "blender": "4.5.13 LTS",
+    "independent_structure_sha256": "3c46705faab15bf55f2a6d8d73678bd7b40ebb7a0365cb0ec9317698210f3c28",
+    "known_home_workspace_temp_patterns_remaining": 0,
+    "scope": "Known private path categories and declared filesystem buffer spans, including bytes afterNUL; no blanket search for arbitrary personal data."
+  },
+  "glb_runtime_report_and_hosted_web_unchanged": true
 }
