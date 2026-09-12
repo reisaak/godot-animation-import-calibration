@@ -2,7 +2,14 @@
 
 A small, original example for inspecting what Godot's animation optimizer changes. It shows the same skinned antenna imported twice, with optimization enabled and disabled, and a recorded comparison of the imported mesh positions.
 
-[Try the browser comparison and download the source](https://fufuufu.itch.io/import-lens-free-calibration).
+## Getting started
+
+- **In your browser:** [Open the free animation comparison](https://fufuufu.itch.io/import-lens-free-calibration).
+- **In Godot 4.5.1:** [Download the ready-to-import project ZIP](https://github.com/reisaak/godot-animation-import-calibration/releases/download/v0.2.2-project/Import_Lens_Free_Calibration_Godot_4.5.1_v0.2.2-store.1.zip). Extract the ZIP into a new folder, then import its root `project.godot`.
+
+The project ZIP opens directly in Godot. If you clone this repository instead, follow the `project/project.godot` instructions below.
+
+For questions or reproducible problems, [open a GitHub issue](https://github.com/reisaak/godot-animation-import-calibration/issues).
 
 The repository contains one calibration model, two clips and a focused inspector. It does not accept arbitrary files or provide an asset-quality score.
 
