@@ -6,12 +6,13 @@ A small, original example for inspecting what Godot's animation optimizer change
 
 - **In your browser:** [Open the free animation comparison](https://fufuufu.itch.io/import-lens-free-calibration).
 - **In Godot 4.5.1:** [Download the ready-to-import project ZIP](https://github.com/reisaak/godot-animation-import-calibration/releases/download/v0.2.2-project/Import_Lens_Free_Calibration_Godot_4.5.1_v0.2.2-store.1.zip). Extract the ZIP into a new folder, then import its root `project.godot`.
+- **Check your own GLB’s structure:** [Use the free Python preflight checker](preflight/README.md). It estimates the supported sampling workload without running Godot; a pass does not guarantee an engine import or measure animation quality.
 
 The project ZIP opens directly in Godot. If you clone this repository instead, follow the `project/project.godot` instructions below.
 
 For questions or reproducible problems, [open a GitHub issue](https://github.com/reisaak/godot-animation-import-calibration/issues).
 
-The repository contains one calibration model, two clips and a focused inspector. It does not accept arbitrary files or provide an asset-quality score.
+The calibration project contains one model, two clips and a focused inspector. That inspector does not accept arbitrary files or provide an asset-quality score. The separate `preflight/` folder checks a local file’s static structure only.
 
 ## Run the included project
 
@@ -55,7 +56,7 @@ These are sampled **CPU-skinned positions**, not a GPU readback. A difference or
 - `fixture/source/build_fixture.py` — original Blender generator, created with Blender 4.5.13.
 - `project/scripts/` — synchronized inspector, skin-point comparison and trace code.
 
-The two GLBs inside `project/models/` are intentional identical copies with different import settings. They are not additional models. This repository includes no engine binary, intake tool or other asset pack.
+The two GLBs inside `project/models/` are intentional identical copies with different import settings. They are not additional models. This repository includes no engine binary or paid import-and-comparison tool. The separate free preflight checker includes these antenna bytes and one original folded-ribbon GLB as small static-check examples.
 
 For regeneration, work in a disposable copy and use Blender 4.5.13:
 
@@ -64,6 +65,16 @@ blender --background --python fixture/source/build_fixture.py
 ```
 
 Regeneration writes the fixture's `.blend`, GLB and JSON. It does not automatically replace the two project copies or recompute the recorded comparison; keep the reviewed files if you want to reproduce the published example.
+
+## Check a local GLB before an engine comparison
+
+The separate [free preflight checker](preflight/README.md) needs Python 3.11 and no extra packages. From this repository’s root:
+
+```sh
+python3 preflight/check_glb.py "/path/to/your-model.glb"
+```
+
+It writes text or JSON to stdout and leaves the input unchanged. `PREFLIGHT_PASS` means the shared static structure checks and estimated sampling workload passed. Godot import, animation correspondence and quality remain untested. Read its small supported subset and exit-status table before interpreting a result. The paid runner, engine probes, optimizer comparison and report renderer are not included.
 
 ## Export the browser version
 
@@ -81,5 +92,7 @@ Copy `report.html` into `build/` alongside the exported `index.html`. Keep the e
 The original calibration model and inspector use [CALIBRATION-LICENSE.txt](CALIBRATION-LICENSE.txt). That notice's original `inspector/` source is bundled here under `project/scripts/` with its scene and comparison resources. The separate web wrapper uses [WRAPPER-LICENSE.txt](WRAPPER-LICENSE.txt).
 
 [CALIBRATION-REPORT-LICENSE.txt](CALIBRATION-REPORT-LICENSE.txt) grants MIT rights to the exact supplied example report and its navigation adaptation. Its original hash identifies `example-report.html`; it does not grant rights to the separate intake implementation. Preserve these notices when reusing their respective files. Godot's notices are included separately.
+
+The files under `preflight/` have their own [MIT license](preflight/LICENSE.txt), including the unchanged shared parser, new wrapper and two original GLBs. That grant does not extend to the separate paid tool.
 
 Created with AI assistance. The model, rig, animation formulas and example code are original. The editable Blender file's saved file-browser directory and render-output path were changed to relative paths for distribution; model data and evaluated animation poses were verified unchanged.

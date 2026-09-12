@@ -1,0 +1,58 @@
+{
+  "name": "Import Lens Free Preflight",
+  "version": "1.0",
+  "license": "MIT",
+  "requirements": "Python 3.11 standard library",
+  "scope": "Static structure and estimated workload only; no Godot process, import, animation measurement, quality grade, repair or guaranteed paid-tool eligibility.",
+  "shared_parser_sha256": "442d3919f503bfe02748895633ea95eb5c41c1c2676a50ed70c41e2d12bb0c88",
+  "shared_parser_origin": "Byte-identical reviewed Import Lens 0.2 parser, separately licensed under MIT in this archive.",
+  "limits": {
+    "max_input_bytes": 26214400,
+    "sample_rates": [
+      30,
+      60,
+      120
+    ],
+    "default_sample_rate": 60,
+    "max_estimated_source_vertex_time_pairs": 4000000
+  },
+  "files": {
+    "check_glb.py": {
+      "bytes": 7062,
+      "sha256": "2c978969e6dccba6357dc1b56ab796a1a930ab98be5e77b25a95718ad7161c88"
+    },
+    "source/preflight.py": {
+      "bytes": 10204,
+      "sha256": "442d3919f503bfe02748895633ea95eb5c41c1c2676a50ed70c41e2d12bb0c88"
+    },
+    "examples/IL_Antenna.glb": {
+      "bytes": 64160,
+      "sha256": "c14e704d5e115d595ca093c0e3da313cf308cf89e0cd15a78d1a5c2faf604f8c"
+    },
+    "examples/IL_Folded_Ribbon.glb": {
+      "bytes": 25596,
+      "sha256": "a6af47fa1e790011271d461d225c8f03b89e00674c42227c4a3de3b797427066"
+    },
+    "README.md": {
+      "bytes": 4514,
+      "sha256": "31dca2d3d436d29e5f4f33f203533880bf4dfef69714c08a1578446088ee72eb"
+    },
+    "LICENSE.txt": {
+      "bytes": 1069,
+      "sha256": "58cdf08008d6094811020f66373d5abe961efe0a8700a9f787c06f50a837cc63"
+    },
+    "PROVENANCE.md": {
+      "bytes": 1548,
+      "sha256": "021d3b7c3d99aa2f753c88c290fc276b72f71edc7ad44141f31e1775c0f003ad"
+    }
+  },
+  "not_included": [
+    "paid import runner",
+    "Godot probes",
+    "import configuration script",
+    "comparison implementation",
+    "HTML renderer",
+    "Godot executable",
+    "Python interpreter"
+  ]
+}
