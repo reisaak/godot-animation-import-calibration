@@ -1,0 +1,15 @@
+# Generated Godot imports/cache. Keep the tracked .glb.import setting files.
+.godot/
+
+# Generated browser engine build.
+/build/
+
+# Local Blender backups and generated render output.
+*.blend1
+*.blend2
+/fixture/renders/
+
+# Python and OS cache files.
+__pycache__/
+*.py[cod]
+.DS_Store

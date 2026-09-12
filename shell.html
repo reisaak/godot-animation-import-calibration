@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Import Lens — Calibration Comparison</title>
+  <style>
+    html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#142833;color:#eef0e8;font:16px/1.45 system-ui,sans-serif}
+    #canvas{display:block;margin:0;border:0;touch-action:none;outline:none}
+    #canvas:focus-visible{outline:3px solid #e4b373;outline-offset:-3px}
+    .top{position:fixed;top:0;left:0;right:0;height:52px;box-sizing:border-box;padding:4px 12px;z-index:4;display:grid;grid-template-columns:auto 1fr auto;grid-template-rows:22px 18px;align-items:center;gap:0 12px;background:#142833;font-size:14px}
+    .top a{color:#c0e8d8;font-weight:650;text-underline-offset:3px}
+    .top a:nth-child(2){justify-self:center}
+    .top .hint{grid-column:1/-1;color:#d9c49e;font-size:12px;line-height:18px}
+    a:focus-visible{outline:3px solid #e4b373;outline-offset:2px;border-radius:3px}
+    #loading{position:fixed;inset:52px 0 0;z-index:3;background:#142833;display:grid;place-content:center;padding:24px;text-align:center;gap:12px}
+    #loading[hidden]{display:none}
+    #loading h1{font-size:25px;margin:0}
+    #message{margin:0;max-width:35rem;overflow-wrap:anywhere}
+    #scope{margin:0;max-width:35rem;color:#c2cfcd;font-size:14px}
+    progress{width:min(100%,320px);justify-self:center;accent-color:#a8d3be}
+    #reload{padding:10px 20px;justify-self:center;border:1px solid #a8d3be;border-radius:5px;background:#eef0e8;color:#243c43;font:inherit}
+    #reload[hidden]{display:none}
+  </style>
+</head>
+<body>
+  <nav class="top" aria-label="Demo links"><a href="https://fufuufu.itch.io/import-lens-free-calibration#download" target="_top" rel="noopener">Back to downloads</a><a href="report.html">Example report</a><a href="https://saiasue36.gumroad.com/" target="_top" rel="noopener">Shop</a><span class="hint">Alt + Page Up / Down: scroll the comparison</span></nav>
+  <canvas id="canvas" tabindex="0" aria-label="Godot calibration comparison with two views of the same included model. Tab selects controls; Enter or Space activates a button. Alt plus Page Up or Page Down scrolls the comparison vertically.">A browser with WebGL 2 and WebAssembly is needed for this Godot calibration.</canvas>
+  <section id="loading" aria-live="polite" aria-busy="true">
+    <h1>Import Lens</h1>
+    <p id="message">Loading the calibration comparison…</p>
+    <p id="scope">One included antenna, two animation imports. This demo does not accept your own files or judge whether an asset is valid.</p>
+    <progress id="progress" aria-label="Download progress"></progress>
+    <button id="reload" type="button" hidden>Reload comparison</button>
+  </section>
+  <noscript>JavaScript is required for this Godot comparison. The shop link still works.</noscript>
+  <script src="$GODOT_URL"></script>
+  <script>
+    'use strict';
+    const config = $GODOT_CONFIG;
+    config.ensureCrossOriginIsolationHeaders = false;
+    config.persistentPaths = [];
+    config.locale = 'en';
+    const loading = document.getElementById('loading');
+    const message = document.getElementById('message');
+    const progress = document.getElementById('progress');
+    const reload = document.getElementById('reload');
+    reload.addEventListener('click', () => window.location.reload());
+    function failed(error) {
+      console.error(error);
+      loading.hidden = false;
+      loading.setAttribute('aria-busy', 'false');
+      message.textContent = 'The comparison could not start. It needs WebGL 2 and WebAssembly. You can reload it or browse the shop.';
+      progress.hidden = true;
+      reload.hidden = false;
+    }
+    if (typeof Engine === 'undefined') {
+      failed(new Error('Godot engine script did not load.'));
+    } else {
+      const missing = Engine.getMissingFeatures({threads: false});
+      if (missing.length) {
+        failed(new Error(missing.join(', ')));
+      } else {
+        const engine = new Engine(config);
+        engine.startGame({onProgress(current, total) {
+          if (current > 0 && total > 0) { progress.max = total; progress.value = current; }
+          else { progress.removeAttribute('value'); progress.removeAttribute('max'); }
+        }}).then(() => {
+          loading.hidden = true;
+          loading.setAttribute('aria-busy', 'false');
+        }, failed);
+      }
+    }
+  </script>
+</body>
+</html>

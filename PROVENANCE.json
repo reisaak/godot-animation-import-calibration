@@ -1,0 +1,46 @@
+{
+  "title": "Import Lens \u2014 Calibration Comparison",
+  "version": "0.2.1",
+  "engine": "Godot 4.5.1.stable.official.f62fdbde1",
+  "scope": "One original included antenna; two actual animation imports and CPU mesh differences. No arbitrary user-file intake or general validity verdict.",
+  "calibration_glb_sha256": "c14e704d5e115d595ca093c0e3da313cf308cf89e0cd15a78d1a5c2faf604f8c",
+  "official_template_url": "https://github.com/godotengine/godot-builds/releases/download/4.5.1-stable/Godot_v4.5.1-stable_export_templates.tpz",
+  "official_archive_sha256": "1998af37f1387684e2c211cdb483daf492fc64dc6b12096bddcdca25b6910c86",
+  "installed_web_template_sha256": "7f6c5efc9952f6f02509adfb92298161c0152a1f6a81c0bf9b9f4f913676e9c8",
+  "web_threads": false,
+  "configured_persistent_paths": [],
+  "service_worker": false,
+  "shop_url": "https://saiasue36.gumroad.com/",
+  "changes_from_frozen_inspector": [
+    "Separate HTML navigation and 52-pixel header wrapper.",
+    "Copied project uses disabled stretch mode for actual-width responsive layout.",
+    "Wrapper-only Alt+PageDown/Alt+PageUp scroll shortcuts; ordinary timeline Home/End preserved.",
+    "HTML Back to downloads link and keyboard hint in the unchanged 52-pixel header reserve.",
+    "Example report links to a self-contained calibration result page in the same iframe."
+  ],
+  "local_checks": "Exported PCK: 35 baseline headless checks plus actual routed keyboard-event regressions. Official engine files byte-identical. Actual shell tested with controlled promises; WASM validates.",
+  "hosted_browser_or_gpu_test_performed": false,
+  "previous_version_hosted_scope": "Parent tested v0.1.1 actual Godot GPU, controls, both clip metrics, Alt scroll and return navigation. The v0.2 report and three-link header hosted deltas remain pending.",
+  "report_source_sha256": "e572c29b3cd2e0f0804bff822db23ddad0a7b5cd3211f8f3caeb0840a8e5524f",
+  "report_hosting_sha256": "f4f2a3482786e14ce43ce5ede50d1d3bf4871fdb62dbd058955b4b5d516162d7",
+  "calibration_report_scope": "One generated report for the included antenna only; no intake tool or other user files. Embedded code/data/CSP unchanged; documented navigation additions only.",
+  "license": "Original calibration and wrapper use their separate MIT notices; Godot uses its own notices.",
+  "hosted_web_version": "0.2",
+  "source_only_update": true,
+  "source_privacy_cleanup": {
+    "blend_sha256": "db2a1fd48e7d0432f7addffafd5231e7336d1855e1621a508154523b10f1558a",
+    "blend_bytes": 739414,
+    "changes": [
+      "Saved file-browser directory replaced with project-relative //",
+      "Scene render output path replaced with project-relative //renders/"
+    ],
+    "model_action_invariant_sha256": "1498bb475269ac2f88fb459171d9351d1a07467730e2eda61c339d8caec9a477",
+    "evaluated_pose_sha256": "4e85333603b93b8d92e1fae04b858ff258411f45ce967f1bb8e37a612f37b61f",
+    "evaluated_poses": 10,
+    "source_vertices_per_pose": 358,
+    "fresh_blender_reopen": "4.5.13 LTS",
+    "geometry_rig_actions_timeline_unchanged": true,
+    "glb_and_runtime_unchanged": true,
+    "private_path_categories_remaining_in_review": []
+  }
+}

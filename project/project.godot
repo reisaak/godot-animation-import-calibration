@@ -1,0 +1,10 @@
+config_version=5
+[application]
+config/name="Import Lens — Calibration Comparison"
+run/main_scene="res://web_main.tscn"
+[display]
+window/size/viewport_width=1100
+window/size/viewport_height=760
+window/stretch/mode="disabled"
+[rendering]
+renderer/rendering_method="gl_compatibility"
