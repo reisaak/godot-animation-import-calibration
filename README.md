@@ -14,6 +14,12 @@ For questions or reproducible problems, [open a GitHub issue](https://github.com
 
 The calibration project contains one model, two clips and a focused inspector. That inspector does not accept arbitrary files or provide an asset-quality score. The separate `preflight/` folder checks a local file’s static structure only.
 
+## Diagnose an import difference
+
+[Follow the optimizer comparison guide](docs/compare-godot-animation-optimizer.md) for a reproducible example, interpretation of the measured differences, and the free check for your own GLB.
+
+For repeated measurements of your own supported files, [Import Lens v0.2 ($5)](https://saiasue36.gumroad.com/l/import-lens-godot-glb?utm_source=github&utm_medium=readme&utm_campaign=import_lens) adds isolated Godot imports, correspondence checks and local reports. Read its exact engine and GLB requirements first. This free project and checker work independently of that purchase.
+
 ## Run the included project
 
 Use **Godot 4.5.1** to reproduce the recorded import behavior. Import `project/project.godot` into the Project Manager, allow the two GLBs to import, then run the project. Keep both `.glb.import` sidecars: they contain the deliberate optimization-setting difference.
